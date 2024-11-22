@@ -1,0 +1,30 @@
+@import "../../../styles/global.scss";
+
+.secaoContato {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 2.5rem;
+  background-color: $primary; 
+  padding-block: 2rem;
+}
+
+.containerIcons {
+  display: flex;
+  gap: 10px;
+
+  img {
+    width: 25px;
+    cursor: pointer;
+  }
+}
+
+
+.secaoInfovnw {
+  background-color: $darkGray;
+  padding-block: 1.4rem;
+}
+
+.textoInformativo {
+  text-align: center;
+  font-weight: 700;
+}

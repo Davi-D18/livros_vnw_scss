@@ -1,0 +1,37 @@
+import S from "./styles/header.module.scss"
+import IconLivro from "../../assets/icons/icon.png"
+import { Link } from "react-router-dom";
+
+export const Header = () => {
+  return (
+    <header className={S.header}>
+      <div className={S['container-header']}>
+        <div className={S.slogan}>
+          <img className={S['logo-imagem']} src={IconLivro} alt="Logo" />
+          <h1 className={S.titulo}>Livros Vai na Web</h1>
+        </div>
+        <nav className={S['secao-navegacao']}>
+          <ul className={S['lista-links']}>
+            <li className={S['item-lista']}>
+              <Link to="/">Inicio</Link>
+            </li>
+            <li className={S['item-lista']}>
+              <Link to="/livrosDoados">Livros Doados</Link>
+            </li>
+            <li className={S['item-lista']}>
+              <Link to="/doacao">Quero Doar</Link>
+            </li>
+          </ul>
+        </nav>
+        <section className={S['form-pesquisa']}>
+          <input
+            type="search"
+            name="buscaDoUsuario"
+            placeholder="O que você procura?"
+            className={S['input-pesquisa']}
+          />
+        </section>
+      </div>
+    </header>
+  );
+};

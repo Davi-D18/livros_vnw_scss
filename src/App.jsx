@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
-import "./styles/global.scss";
 
 export function App() {
   return (

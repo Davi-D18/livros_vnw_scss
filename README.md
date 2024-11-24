@@ -24,16 +24,18 @@ Embora o foco seja a recriação da interface, o projeto simula um site funciona
 ### 3. Página de Livros Doados
 - Lista os livros doados utilizando dados renderizados de forma dinâmica a partir de um arquivo estático.
 
+### 4. Página 404
+- Essa página é mostrada quando o usúario tenta acessar uma rota inexistente
+
 ---
 
 ## 🗂️ **Estrutura do Projeto**
-O projeto segue uma estrutura modular e organizada para facilitar a manutenção e escalabilidade:
 
 ```plaintext
 src/
 ├── assets/
 │   ├── icons/            # Ícones usados nos cards e seções do site.
-│   ├── images/           # Imagens estáticas, como banners e placeholders.
+│   ├── images/           # Imagens estáticas
 │
 ├── components/
 │   ├── CardLivro/        # Componente responsável por exibir os livros doados.
@@ -56,12 +58,17 @@ src/
 │   ├── LivrosDoados/
 │   │   ├── LivrosDoados.jsx # Página que lista os livros já doados.
 │   │   ├── styles/          # Estilos específicos da página de livros doados.
+│   │
+│   ├── Error
+│   │   ├── Error404.jsx    # Página de erro que é mostrada quando uma rota não está funcionado
+│   │   ├── styles/         # Estilos específicos da página de erro.
+│   │
 │
 ├── styles/
 │   ├── global.scss       # Estilos globais aplicados em toda a aplicação.
 │
-├── App.jsx               # Configuração principal das rotas do site.
-├── main.jsx              # Arquivo de entrada para renderizar o React.
+├── App.jsx               # Arquivo onde é exibido o conteúdo
+├── main.jsx              # Configuração principal das rotas do site e renderização dos componentes e páginas.
 
 ```
 

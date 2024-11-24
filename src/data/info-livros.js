@@ -2,7 +2,7 @@ import ImagemLivro from "../assets/images/livro-img.png";
 
 export const Livros = [
   {
-    titulo: "O Protagonista susanne sndrade ficção",
+    titulo: "O Protagonista susanne andrade ficção",
     imagem: ImagemLivro,
     paginas: "278",
   },

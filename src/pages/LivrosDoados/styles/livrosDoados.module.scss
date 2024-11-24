@@ -14,7 +14,18 @@
 .sectionLivros {
   display: flex;
   justify-content: center;
+  gap: 2.5rem;
   flex-wrap: wrap;
   max-width: 90dvw;
   margin: 0 auto;
+}
+
+@media (max-width: $breakpoint-mobile) {
+ .titulo {
+  font-size: 30px;
+ }
+
+ .sectionLivros {
+  margin-top: 5vh;
+ }
 }

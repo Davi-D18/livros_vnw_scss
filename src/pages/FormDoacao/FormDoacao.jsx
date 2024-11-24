@@ -39,6 +39,12 @@ export const FormDoacao = () => {
           name="imagem-livro"
           placeholder="Link da imagem"
         />
+        <input
+          className={S.input}
+          type="text"
+          name="imagem-livro"
+          placeholder="Quantidade de páginas"
+        />
 
         <button className={S.buttonSubmitDoar}>Doar</button>
       </form>

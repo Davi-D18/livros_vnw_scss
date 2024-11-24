@@ -39,3 +39,25 @@
   gap: 15px;
 }
 
+@media (max-width: $breakpoint-mobile) {
+  .sectionContainer {
+    background-image: url("../../../assets/images/secao1_entregando-livros-mobile.png");
+    justify-content: center;
+  }
+
+  .title {
+    max-width: 70%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .textPorqueDoar {
+    text-align: center;
+    font-size: 1.9em;
+  }
+
+  .containerCards {
+    justify-content: center;
+  }
+}
+

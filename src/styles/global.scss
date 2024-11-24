@@ -12,6 +12,11 @@ $fontSecondary: 'Roboto', sans-serif;
 // Outros
 $gradient: 90deg, #001B2F, #005695;
 
+// Media Query Breakpoints
+$breakpoint-mobile: 425px;  // Para celulares 
+$breakpoint-tablet: 768px;  // Para tablets e telas intermediárias
+$breakpoint-desktop: 1024px; // Para telas maiores 
+
 * {
   margin: 0;
   padding: 0;

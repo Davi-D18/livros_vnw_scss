@@ -14,13 +14,13 @@ export const Header = () => {
         </div>
         <nav className={S["secao-navegacao"]}>
           <ul className={S["lista-links"]}>
-            <li className={S["item-lista"]}>
+            <li>
               <Link to="/">Inicio</Link>
             </li>
-            <li className={S["item-lista"]}>
+            <li>
               <Link to="/livrosDoados">Livros Doados</Link>
             </li>
-            <li className={S["item-lista"]}>
+            <li>
               <Link to="/doacao">Quero Doar</Link>
             </li>
           </ul>

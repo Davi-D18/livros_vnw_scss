@@ -1,8 +1,9 @@
 @import "../../../styles/global.scss";
+@import "./responsive-header.module.scss";
 
 .header {
   background: linear-gradient($gradient);
-  padding: 1.2rem 0;
+  padding-block: 1.2rem;
 }
 
 .container-header {
@@ -74,5 +75,26 @@
 
   &:focus {
     outline: 1px solid white;
+  }
+}
+
+// Media queries
+
+@media (max-width: $breakpoint-tablet) {
+  .header {
+    padding-block: 0.7rem;
+  }
+
+  .container-header {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .lista-links li a {
+    font-size: 18px;
+  }
+
+  .form-pesquisa {
+    display: none;
   }
 }

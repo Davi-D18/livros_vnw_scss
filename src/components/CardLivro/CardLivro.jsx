@@ -6,6 +6,9 @@ export function CardLivro(props) {
     <article className={S.articleLivro}>
       <img className={S.imagem} src={props.imagem} alt="Imagem do Livro" />
       <p className={S.descricao}>{props.descricao}</p>
+      <p className={S.paginas}>
+        Páginas: <span>{props.paginas}</span>
+      </p>
     </article>
   );
 }
@@ -13,4 +16,5 @@ export function CardLivro(props) {
 CardLivro.propTypes = {
   imagem: PropTypes.node.isRequired,
   descricao: PropTypes.string.isRequired,
+  paginas: PropTypes.string.isRequired,
 };

@@ -15,6 +15,7 @@ export const LivrosDoados = () => {
               key={index}
               imagem={livro.imagem}
               descricao={livro.titulo}
+              paginas={livro.paginas}
             />
           ))}
         </section>

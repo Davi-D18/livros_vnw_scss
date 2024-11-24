@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Hourglass } from "react-loader-spinner";
 
-export const Error = () => {
+export const Error404 = () => {
   const [loading, setLoading] = useState(true); // Estado para controlar o carregamento
 
   useEffect(() => {

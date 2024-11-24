@@ -5,14 +5,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home/Home.jsx";
 import { FormDoacao } from "./pages/FormDoacao/FormDoacao.jsx";
 import { LivrosDoados } from "./pages/LivrosDoados/LivrosDoados.jsx";
-import { Error } from "./pages/Error/Error.jsx";
+import { Error404 } from "./pages/Error/Error404.jsx";
 import { App } from "./App.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error />,
+    errorElement: <Error404 />,
     children: [
       {
         path: "/",

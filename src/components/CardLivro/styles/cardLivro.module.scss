@@ -24,20 +24,37 @@
 
 .descricao {
   color: $black;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   max-width: 86%;
-  text-transform: capitalize;
   margin-block: auto;
+}
+
+.listaInfo {
   margin-top: 3vh;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  li {
+    text-transform: capitalize;
+    color: $black;
+    text-align: center;
+  }
 }
 
 .paginas {
-  color: $black;
-  margin-top: 2vh;
-
-  span {
-    color: #0334a7;
-    font-weight: 600;
-  }
+  color: #0334a7;
+  font-weight: 600;
 }
+
+.categoria {
+  color: #0334a7;
+  font-weight: 600;
+}
+
+
+
+

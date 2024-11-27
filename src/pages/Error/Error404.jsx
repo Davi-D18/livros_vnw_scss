@@ -12,7 +12,7 @@ export const Error404 = () => {
     // Simula o carregamento da página
     setTimeout(() => {
       setLoading(false); // Após 2 segundos, esconde o loader e mostra o conteúdo
-    }, 2500); // Ajuste o tempo conforme necessário
+    }, 2500);
   }, []);
 
   return (

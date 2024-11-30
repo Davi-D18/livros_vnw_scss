@@ -60,7 +60,7 @@ src/
 │   │   ├── styles/          # Estilos específicos da página de livros doados.
 │   │
 │   ├── Error
-│   │   ├── Error404.jsx    # Página de erro que é mostrada quando uma rota não está funcionado
+│   │   ├── Error404.jsx    # Página de erro que é mostrada quando uma rota não está funcionando
 │   │   ├── styles/         # Estilos específicos da página de erro.
 │   │
 │

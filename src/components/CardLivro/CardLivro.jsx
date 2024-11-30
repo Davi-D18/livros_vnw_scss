@@ -4,7 +4,12 @@ import S from "./styles/cardLivro.module.scss";
 export function CardLivro(props) {
   return (
     <article className={S.articleLivro}>
-      <img className={S.imagem} src={props.imagem} alt="Imagem do Livro" />
+      <img
+        className={S.imagem}
+        src={props.imagem}
+        alt="Imagem do Livro"
+        loading="lazy" // Carrega a imagem quando estiver prestes a ser exibida
+      />
       <ul className={S.listaInfo}>
         <li className={S.descricao}>{props.descricao}</li>
         <li>

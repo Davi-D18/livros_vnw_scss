@@ -26,6 +26,21 @@ Embora o foco seja a recriação da interface, o projeto simula um site funciona
 
 ### 4. Página 404
 - Essa página é mostrada quando o usúario tenta acessar uma rota inexistente
+---
+
+## 💻 **Tecnologias Usadas**
+
+### 📚 Bibliotecas
+
+- **React**: Uma biblioteca JavaScript para a construção de interfaces de usuário.
+- **SCSS**: Um pré-processador CSS que permite o uso de variáveis, mixins e funções.
+- **PropTypes**: Utilizada para a validação das propriedades dos componentes React.
+- **React Router Dom**: Fornece funcionalidades para a criação de rotas dinâmicas em aplicações React.
+
+### 🛠️ Ferramentas
+
+- **react-loader-spinner**: Oferece uma variedade de spinners personalizáveis para React.
+- **fortawesome/fontawesome-free**: Integra ícones do Font Awesome em projetos React.
 
 ---
 

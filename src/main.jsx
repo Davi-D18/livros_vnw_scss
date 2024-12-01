@@ -7,6 +7,7 @@ import { LivrosDoados } from "./pages/LivrosDoados/LivrosDoados.jsx";
 import { Error404 } from "./pages/Error/Error404.jsx";
 import { App } from "./App.jsx";
 
+// Rotas das páginas do site
 const router = createBrowserRouter([
   {
     path: "/",

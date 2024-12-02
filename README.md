@@ -15,7 +15,6 @@ Embora o foco seja a recriação da interface, o projeto simula um site funciona
 ## ⚙️ **Funcionalidades**
 ### 1. Página Inicial
 - Exibe informações sobre a importância de doar livros.
-- Apresenta **cards de motivos** para incentivar a doação.
 
 ### 2. Página de Doação
 - Contém um **formulário visual** para preenchimento de informações sobre o livro a ser doado.
@@ -25,7 +24,7 @@ Embora o foco seja a recriação da interface, o projeto simula um site funciona
 - Lista os livros doados utilizando dados renderizados de forma dinâmica a partir de um arquivo estático.
 
 ### 4. Página 404
-- Essa página é mostrada quando o usúario tenta acessar uma rota inexistente
+- Essa página é mostrada quando o usúario tenta acessar um link ou rota inexistente
 ---
 
 ## 💻 **Tecnologias Usadas**
@@ -80,14 +79,20 @@ src/
 │   │
 │
 ├── styles/
-│   ├── global.scss       # Estilos globais aplicados em toda a aplicação.
+│   ├── global.scss       # Estilos globais aplicados em toda a aplicação com variáveis scss para ser reutilizado no site.
 │
 ├── App.jsx               # Arquivo onde é exibido o conteúdo
 ├── main.jsx              # Configuração principal das rotas do site e renderização dos componentes e páginas.
 
 ```
 
-## 🔗 Links Importantes
+## 🔗 **Links Importantes**
+
+### Layout
+
 - [Figma - Protótipo do Design](https://www.figma.com/design/MDGn9uI2Ny5Y8sOJWnmfRp/Proposta-Empower?node-id=0-1&node-type=canvas&t=5ZOGhZLQsGD8Muj1-0)
+
+### Deploy
+
 - [Deploy - Site ao vivo](https://livros-vnw-chi.vercel.app/)
 

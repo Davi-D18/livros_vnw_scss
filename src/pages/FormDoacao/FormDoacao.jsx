@@ -9,7 +9,7 @@ export const FormDoacao = () => {
         do Livro
       </p>
 
-      <form className={S.secaoFormulario}>
+      <form className={S.secaoFormulario} action="POST">
         <div className={S.containerIconAndText}>
           <img className={S.iconImagemLivro} src={Icon} alt="Ícone Livro" />
           <h2 className={S.infoLivro}>Informações do Livro</h2>

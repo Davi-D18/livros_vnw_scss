@@ -41,18 +41,18 @@ export function Home() {
       </section>
 
       <section className={S.containerDoar}>
-      <h2 className={S.textPorqueDoar}>Por que devo doar?</h2>
+        <h2 className={S.textPorqueDoar}>Por que devo doar?</h2>
 
-      <div className={S.containerCards}>
-        {data.map((card) => (
-          <CardMotivosDoar
-            key={card.id}
-            iconeCard={card.iconeCard}
-            descricao={card.descricao}
-          />
-        ))}
-      </div>
-    </section>
+        <div className={S.containerCards}>
+          {data.map((card) => (
+            <CardMotivosDoar
+              key={card.id}
+              iconeCard={card.iconeCard}
+              descricao={card.descricao}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

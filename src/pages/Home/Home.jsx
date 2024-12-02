@@ -1,4 +1,5 @@
 import S from "./styles/home.module.scss";
+import { useEffect } from "react";
 
 // Imagens
 import Icon1 from "../../assets/icons/grupo-pessoas.png";
@@ -8,6 +9,30 @@ import Icon4 from "../../assets/icons/balanca.png";
 import { CardMotivosDoar } from "../../components/CardMotivosDoar/CardMotivosDoar";
 
 export function Home() {
+  useEffect(() => {
+    // Variável de controle para garantir que a simulação seja feita apenas uma vez
+    let layoutAdjusted = false;
+
+    // Função para simular o movimento de rolagem
+    function simulateScroll() {
+      // Verifica se já foi ajustado antes
+      if (layoutAdjusted) return;
+
+      // Simula um pequeno scroll para forçar o layout a se ajustar
+      window.scrollBy(0, 3); // Rolagem de 1px para baixo
+      window.scrollBy(0, -3); // Rolagem de 1px para cima
+
+      // Marcar como ajustado
+      layoutAdjusted = true;
+    }
+
+    // Espera o carregamento da página
+    window.addEventListener("load", () => {
+      // Chama a função para simular o scroll após o carregamento da página
+      setTimeout(simulateScroll, 500); // Ajuste o tempo conforme necessário
+    });
+  }, []);
+
   const data = [
     {
       id: 1,

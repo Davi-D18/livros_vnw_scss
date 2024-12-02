@@ -4,8 +4,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  height: 100vh;
-  min-height: 100vh;
+  height: 100dvh;
   background-color: #f9f9f9;
   padding: 20px;
 }
@@ -57,13 +56,13 @@
 
 // Define posições fixas para os ícones
 .bookIcon:nth-child(1) { top: 10%; left: 15%; }
-.bookIcon:nth-child(2) { top: 20%; left: 60%; }
+.bookIcon:nth-child(2) { top: 30%; left: 60%; }
 .bookIcon:nth-child(3) { top: 30%; left: 40%; }
 .bookIcon:nth-child(4) { top: 5%; left: 80%; }
 .bookIcon:nth-child(5) { top: 70%; left: 10%; }
 .bookIcon:nth-child(6) { top: 44%; left: 20%; }
 .bookIcon:nth-child(7) { top: 80%; left: 50%; }
-.bookIcon:nth-child(8) { top: 60%; left: 75%; }
+.bookIcon:nth-child(8) { top: 70%; left: 75%; }
 .bookIcon:nth-child(9) { top: 17%; left: 50%; }
 .bookIcon:nth-child(10) { top: 25%; left: 10%; }
 
@@ -76,9 +75,10 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media (max-width: $breakpoint-tablet) {
   .errorPage {
     padding: 10px;
+    height: 790px;
   }
 
   .errorCode {
@@ -94,6 +94,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: 795px;
 
     i {
       font-size: 1.2rem;

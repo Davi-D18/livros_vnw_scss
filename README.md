@@ -34,11 +34,12 @@ Embora o foco seja a recriação da interface, o projeto simula um site funciona
 - **React**: Uma biblioteca JavaScript para a construção de interfaces de usuário.
 - **SCSS**: Um pré-processador CSS que permite o uso de variáveis, mixins e funções.
 - **PropTypes**: Utilizada para a validação das propriedades dos componentes React.
-- **React Router Dom**: Fornece funcionalidades para a criação de rotas dinâmicas em aplicações React.
+- **react-router-Dom**: Fornece funcionalidades para a criação de rotas dinâmicas em aplicações React.
+- **react-notifications-component**: Para gerenciar notificações na aplicação.
+- **react-loader-spinner**: Oferece uma variedade de spinners personalizáveis para React.
 
 ### 🛠️ Ferramentas
 
-- **react-loader-spinner**: Oferece uma variedade de spinners personalizáveis para React.
 - **fortawesome/fontawesome-free**: Integra ícones do Font Awesome em projetos React.
 
 ---
@@ -60,6 +61,13 @@ src/
 ├── data/
 │   ├── livros.js         # Array estático com as informações dos livros doados.
 │
+├── context/
+│   ├── FormProvider.jsx    # Contexto para gerenciar os dados do formulário.
+│
+├── hooks/
+│   ├── useFormContext.jsx  # Hook personalizado para acessar o contexto do formulário.
+│
+│
 ├── pages/
 │   ├── FormDoacao/
 │   │   ├── FormDoacao.jsx # Página de doação com formulário
@@ -77,6 +85,9 @@ src/
 │   │   ├── Error404.jsx    # Página de erro que é mostrada quando uma rota não está funcionando
 │   │   ├── styles/         # Estilos específicos da página de erro.
 │   │
+│   ├── Resumo/
+│   │   ├── Resumo.jsx     # Página que exibe o resumo da doação com detalhes do livro.
+│   │   ├── styles/        # Estilos específicos da página de resumo.
 │
 ├── styles/
 │   ├── global.scss       # Estilos globais aplicados em toda a aplicação com variáveis scss para ser reutilizado no site.

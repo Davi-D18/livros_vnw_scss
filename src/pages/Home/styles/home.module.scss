@@ -19,9 +19,16 @@
 }
 
 .containerDoar {
-  max-width: 79dvw;
+  max-width: 90dvw;
+  display: flex;
+  width: 100%;
+  justify-content: center;
   margin: 0 auto;
   margin-bottom: 18vh;
+}
+
+.containerAlinhamento {
+ 
 }
 
 .textPorqueDoar {
@@ -34,7 +41,7 @@
 .containerCards {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 2.8rem;
 }
 
 @media (max-width: $breakpoint-tablet) {

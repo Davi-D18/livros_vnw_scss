@@ -40,8 +40,8 @@
 
 .input {
   border: 2px solid $primary;
-  padding: 7px;
-  width: 70%;
+  padding: 9px 7px;
+  width: 78%;
   border-radius: 8px;
   background-color: transparent;
   padding-left: 8px;
@@ -52,7 +52,8 @@
   }
 
   &:focus {
-    outline: 1px solid $primary;
+    outline: none;
+    box-shadow: 0 0 0 2px $primary;
   }
 }
 
@@ -65,10 +66,11 @@
   font-size: 17px;
   border-radius: 9px;
   cursor: pointer;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
+    box-shadow: 0 0 0 2px $primary, 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -81,6 +83,11 @@
     font-size: 20px;
     max-width: 87%;
     margin-inline: auto;
+  }
+
+  .buttonSubmitDoar:hover {
+    transform: scale(1);
+    box-shadow: none;
   }
 
  .secaoFormulario {

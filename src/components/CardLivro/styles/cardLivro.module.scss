@@ -10,11 +10,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out;
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: -1px 1px 1px 0px black;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
   }
 }
 

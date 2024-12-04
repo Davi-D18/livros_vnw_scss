@@ -1,7 +1,14 @@
 import S from "./styles/formDoacao.module.scss";
 import Icon from "../../assets/icons/livro-icon.png";
+import { useNavigate } from "react-router-dom";
 
 export const FormDoacao = () => {
+  const navigate = useNavigate(); // Hook para navegar entre rotas
+  function redirecionarUsuario(e) {
+    e.preventDefault();
+    navigate("/");
+  }
+
   return (
     <section className={S.secaoFormDoarLivro}>
       <p className={S.aviso}>
@@ -9,7 +16,14 @@ export const FormDoacao = () => {
         do Livro
       </p>
 
-      <form className={S.secaoFormulario} action="POST">
+      <form
+        className={S.secaoFormulario}
+        action=""
+        method="POST"
+        onSubmit={(e) => {
+          redirecionarUsuario(e);
+        }}
+      >
         <div className={S.containerIconAndText}>
           <img className={S.iconImagemLivro} src={Icon} alt="Ícone Livro" />
           <h2 className={S.infoLivro}>Informações do Livro</h2>

@@ -1,13 +1,30 @@
 import S from "./styles/formDoacao.module.scss";
 import Icon from "../../assets/icons/livro-icon.png";
 import { useNavigate } from "react-router-dom";
+import { useFormContext } from "../../hooks/useFormContext";
+import { useState } from "react";
 
 export const FormDoacao = () => {
-  const navigate = useNavigate(); // Hook para navegar entre rotas
-  function redirecionarUsuario(e) {
+  const navigate = useNavigate();
+  const { setFormData } = useFormContext(); // Função para atualizar os dados globais
+  const [formValues, setFormValues] = useState({
+    titulo: "",
+    categoria: "",
+    autor: "",
+    imagem: "",
+    paginas: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/");
-  }
+    setFormData(formValues); // Salva os dados no contexto
+    navigate("/resumo"); // Redireciona para a página de resumo
+  };
 
   return (
     <section className={S.secaoFormDoarLivro}>
@@ -21,7 +38,7 @@ export const FormDoacao = () => {
         action=""
         method="POST"
         onSubmit={(e) => {
-          redirecionarUsuario(e);
+          handleSubmit(e);
         }}
       >
         <div className={S.containerIconAndText}>
@@ -32,32 +49,47 @@ export const FormDoacao = () => {
         <input
           className={S.input}
           type="text"
-          name="titulo-livro"
+          name="titulo"
           placeholder="Titulo"
+          value={formValues.titulo}
+          onChange={handleChange}
+          required
         />
         <input
           className={S.input}
           type="text"
-          name="categoria-livro"
+          name="categoria"
           placeholder="Categoria"
+          value={formValues.categoria}
+          onChange={handleChange}
+          required
         />
         <input
           className={S.input}
           type="text"
-          name="autor-livro"
+          name="autor"
           placeholder="Autor"
+          value={formValues.autor}
+          onChange={handleChange}
+          required
         />
         <input
           className={S.input}
           type="text"
-          name="imagem-livro"
+          name="imagem"
           placeholder="Link da imagem"
+          value={formValues.imagem}
+          onChange={handleChange}
+          required
         />
         <input
           className={S.input}
-          type="text"
-          name="imagem-livro"
+          type="number"
+          name="paginas"
           placeholder="Quantidade de páginas"
+          value={formValues.paginas}
+          onChange={handleChange}
+          required
         />
 
         <button className={S.buttonSubmitDoar}>Doar</button>

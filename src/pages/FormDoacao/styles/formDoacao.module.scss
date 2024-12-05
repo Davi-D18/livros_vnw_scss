@@ -74,9 +74,9 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media (max-width: $breakpoint-tablet) {
   .secaoFormDoarLivro {
-    margin-bottom: 2rem;
+    margin-bottom: 13vh;
   }
   
   .aviso {

@@ -18,6 +18,7 @@ export const Resumo = () => {
     // Simula o carregamento da página
     setTimeout(() => {
       setLoading(false); // Após 1 segundo, esconde o loader e mostra o conteúdo
+      window.scrollTo(0, 0);
     }, 1000);
   }, []);
 
@@ -25,7 +26,7 @@ export const Resumo = () => {
     const isMobile = window.innerWidth <= 768;
 
     Store.addNotification({
-      title: "Obrigado!",
+      title: "Agradecemos :)",
       message: "Sua doação foi recebida com sucesso.",
       type: "success",
       insert: "top",
@@ -49,9 +50,9 @@ export const Resumo = () => {
   };
 
   function handleBack() {
-    window.scrollTo(0, 0); // Scroll para o topo
     setTimeout(() => {
       navigate("/"); // Redireciona para a página inicial
+      window.scrollTo(0, 0); // Scroll para o topo
     }, 300);
   }
 
@@ -93,9 +94,25 @@ export const Resumo = () => {
               <p className={S.infoText}>{formData.autor}</p>
             </div>
 
-            <div className={S.infoItem}>
+            <div className={S.infoItem + " " + S.infoItemImg}>
               <strong>Imagem:</strong>
-              <p className={S.infoText}>{formData.imagem}</p>
+              {formData.imagem ? (
+                <img
+                  className={S.infoImg}
+                  src={formData.imagem}
+                  alt={`Imagem do Livro ${formData.titulo}`}
+                  onError={(e) => {
+                    e.target.src =
+                      "https://via.placeholder.com/110x110?text=Erro";
+                  }}
+                />
+              ) : (
+                <img
+                  className={S.infoImg}
+                  src="https://via.placeholder.com/110x110?text=Imagem+não+encontrada"
+                  alt="Imagem não encontrada"
+                />
+              )}
             </div>
 
             <div className={S.infoItem}>

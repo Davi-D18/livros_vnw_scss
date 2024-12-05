@@ -22,26 +22,37 @@ export const Resumo = () => {
   }, []);
 
   const showNotification = () => {
+    const isMobile = window.innerWidth <= 768;
+
     Store.addNotification({
       title: "Obrigado!",
       message: "Sua doação foi recebida com sucesso.",
       type: "success",
       insert: "top",
       container: "top-right",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
+      animationIn: [
+        "animate__animated",
+        isMobile ? "animate__fadeInUp" : "animate__fadeIn",
+      ],
+      animationOut: [
+        "animate__animated",
+        isMobile ? "animate__fadeOutDown" : "animate__fadeOut",
+      ],
       dismiss: {
-        duration: 3800,
+        duration: isMobile ? 2700 : 3900, // Menor duração para dispositivos móveis
         onScreen: true,
+        showIcon: true,
         onDismiss: handleBack(), // Redireciona após o fechamento
       },
+      width: isMobile ? 300 : 400,
     });
   };
 
   function handleBack() {
+    window.scrollTo(0, 0); // Scroll para o topo
     setTimeout(() => {
-      navigate("/");
-    }, 400);
+      navigate("/"); // Redireciona para a página inicial
+    }, 300);
   }
 
   const handleConfirm = () => {
@@ -98,6 +109,8 @@ export const Resumo = () => {
               onClick={handleConfirm}
               className={S.button}
               style={{ backgroundColor: buttonColor || undefined }} // Aplica a cor dinamicamente
+              disabled={loadingButton} // Desabilita o botão enquanto estiver carregando
+              aria-label="Confirmar doação" // Aria-label para acessibilidade
             >
               {loadingButton ? (
                 <ThreeDots

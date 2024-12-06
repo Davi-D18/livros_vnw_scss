@@ -1,52 +1,22 @@
-/* Estilos gerais do container */
-.resumoContainer {
-  background: #f9fafb;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  max-width: 800px;
-  margin: 9vh auto;
-  text-align: center;
-  opacity: 0;
-  animation: fadeIn 1s forwards; /* Animação de fadeIn no carregamento */
-}
-
+// Animações
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
-}
-
-/* Estilo para o título */
-.title {
-  font-size: 2.5rem;
-  font-family: 'Arial', sans-serif;
-  color: #1a202c;
-  margin-bottom: 40px;
-  font-weight: 600;
-  animation: slideIn 0.7s ease-out; /* Animação de slide-in para o título */
 }
 
 @keyframes slideIn {
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0);
   }
-}
-
-/* Layout das informações */
-.infoContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 20px;
-  animation: fadeInUp 1s ease-out; /* Animação de fade-in para o conteúdo */
 }
 
 @keyframes fadeInUp {
@@ -54,21 +24,11 @@
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Estilo de cada bloco de informação */
-.infoItem {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  width: 48%;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  animation: fadeInLeft 0.8s ease-out; /* Animação de fade-in à esquerda */
 }
 
 @keyframes fadeInLeft {
@@ -76,25 +36,69 @@
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-.infoItem:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  transform: translateY(-3px);
+// Estilos gerais do container
+.resumoContainer {
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
+  padding: 40px;
+  max-width: 800px;
+  margin: 9vh auto;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
-/* Estilo do texto */
-.infoItem strong {
-  color: #2d3748;
-  font-weight: 500;
+// Estilo para o título
+.title {
+  font-size: 2.5rem;
+  font-family: Arial, sans-serif;
+  color: #1a202c;
+  margin-bottom: 40px;
+  font-weight: 600;
+  animation: slideIn 0.7s ease-out;
+}
+
+// Layout das informações
+.infoContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+// Estilo de cada bloco de informação
+.infoItem {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  width: 48%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  animation: fadeInLeft 0.8s ease-out;
+
+  &:hover {
+    box-shadow: 0 6px 18px rgb(0 0 0 / 20%);
+    transform: translateY(-3px);
+  }
+
+  strong {
+    color: #2d3748;
+    font-weight: 500;
+  }
 }
 
 .infoText {
-  color: #032b6e;
+  color: $primary;
   font-weight: 500;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -103,28 +107,22 @@
 
 .infoItemImg {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 15px;
-  align-items: center;
 }
 
-.infoImagemnaoEncontrada, .infoImagemInvalida {
+// Estilo das imagens de erro
+.infoImagemnaoEncontrada,
+.infoImagemInvalida {
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
+  flex-direction: column;
 
-.infoImagemNaoEncontrada p {
-  color: $black;
-}
-
-.infoImgErro {
-  width: 27%;
-}
-
-.textImagemnaoEncontrada p {
-  color: $black;
-  font-weight: 600;
+  p {
+    color: $black;
+    font-weight: 600;
+  }
 }
 
 .textImagemInvalida {
@@ -138,8 +136,8 @@
   border-radius: 8px;
 }
 
-/* Responsividade para telas pequenas */
-@media (max-width: 768px) {
+// Responsividade
+@media (max-width: $breakpoint-tablet) {
   .infoContainer {
     flex-direction: column;
   }
@@ -154,12 +152,13 @@
   }
 }
 
+// Loader e botão
 .containerLoader {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 1rem;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   width: 100%;
 

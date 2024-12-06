@@ -7,6 +7,9 @@ import { Store } from "react-notifications-component"; // Importa a biblioteca d
 import "react-notifications-component/dist/theme.css"; // Importa os estilos das notificações
 import "animate.css"; // Importa animações
 
+import IconImgColorida from "../../assets/icons-erro/error-colorida.png";
+import IconImgLupaErro from "../../assets/icons-erro/error-img-lupa.png";
+
 export const Resumo = () => {
   const navigate = useNavigate();
   const { formData } = useFormContext(); // Obtém os dados do formulário
@@ -97,21 +100,32 @@ export const Resumo = () => {
             <div className={S.infoItem + " " + S.infoItemImg}>
               <strong>Imagem:</strong>
               {formData.imagem ? (
-                <img
-                  className={S.infoImg}
-                  src={formData.imagem}
-                  alt={`Imagem do Livro ${formData.titulo}`}
-                  onError={(e) => {
-                    e.target.src =
-                      "https://via.placeholder.com/110x110?text=Erro";
-                  }}
-                />
+                <div className={S.infoImagemNaoEncontrada}>
+                  <img
+                    className={S.infoImg}
+                    src={formData.imagem}
+                    alt={`Imagem do Livro ${formData.titulo}`}
+                    onError={(e) => {
+                      let imgClasse = S.infoImgErro;
+                      e.target.src = IconImgLupaErro;
+                      e.target.classList.replace(S.infoImg, imgClasse); // Substitui a classe
+                    }}
+                    loading="lazy"
+                  />
+                  <p>Imagem não encontrada</p>
+                </div>
               ) : (
-                <img
-                  className={S.infoImg}
-                  src="https://via.placeholder.com/110x110?text=Imagem+não+encontrada"
-                  alt="Imagem não encontrada"
-                />
+                <div className={S.infoImagemInvalida}>
+                  <img
+                    className={S.infoImg}
+                    src={IconImgColorida}
+                    loading="lazy"
+                    alt="Imagem de erro"
+                  />
+                  <p className={S.textImagemInvalida}>
+                    Link da Imagem Inválido
+                  </p>
+                </div>
               )}
             </div>
 

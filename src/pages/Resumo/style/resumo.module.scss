@@ -108,11 +108,34 @@
   align-items: center;
 }
 
+.infoImagemnaoEncontrada, .infoImagemInvalida {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infoImagemNaoEncontrada p {
+  color: $black;
+}
+
+.infoImgErro {
+  width: 27%;
+}
+
+.textImagemnaoEncontrada p {
+  color: $black;
+  font-weight: 600;
+}
+
+.textImagemInvalida {
+  color: #921111;
+  font-weight: 600;
+}
+
 .infoImg {
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
   border-radius: 8px;
-  margin-bottom: 8px;
 }
 
 /* Responsividade para telas pequenas */

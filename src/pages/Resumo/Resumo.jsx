@@ -15,8 +15,9 @@ export const Resumo = () => {
   const { formData } = useFormContext(); // Obtém os dados do formulário
   const [loading, setLoading] = useState(true); // Estado para controlar o carregamento
   const [loadingButton, setLoadingButton] = useState(false); // Estado para controlar o carregamento do botão
-  const [buttonColor, setButtonColor] = useState(""); // Estado para armazenar a cor do botão
 
+  const tagParagrafo = useRef(null);
+  const colorButton = useRef();
   useEffect(() => {
     // Simula o carregamento da página
     setTimeout(() => {
@@ -24,8 +25,6 @@ export const Resumo = () => {
       window.scrollTo(0, 0);
     }, 1000);
   }, []);
-
-  const tagParagrafo = useRef(null);
 
   const showNotification = () => {
     const isMobile = window.innerWidth <= 768;
@@ -61,16 +60,16 @@ export const Resumo = () => {
     }, 300);
   }
 
-  const handleConfirm = () => {
+  function handleConfirm() {
     setLoadingButton(true);
-    setButtonColor("#043355"); // Muda a cor do botão
+    colorButton.current.style.backgroundColor = "#043355";
 
     setTimeout(() => {
       setLoadingButton(false);
-      setButtonColor(""); // Reseta a cor do botão
+      colorButton.current.style.backgroundColor = "#005695"; // Reseta a cor do botão
       showNotification(); // Exibe a notificação
     }, 1000);
-  };
+  }
 
   function mostrarText() {
     tagParagrafo.current.innerHTML = `Imagem não encontrada`;
@@ -150,7 +149,7 @@ export const Resumo = () => {
             <button
               onClick={handleConfirm}
               className={S.button}
-              style={{ backgroundColor: buttonColor || undefined }} // Aplica a cor dinamicamente
+              ref={colorButton}
               disabled={loadingButton} // Desabilita o botão enquanto estiver carregando
               aria-label="Confirmar doação" // Aria-label para acessibilidade
             >

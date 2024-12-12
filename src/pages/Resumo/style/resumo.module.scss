@@ -193,10 +193,10 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease-out;
+  transition: transform 0.1s ease-out;
   font-size: 1em;
 
   &:hover {
-    background-color: #033e69;
+    transform: scale(0.98);
   }
 }

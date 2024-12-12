@@ -1,11 +1,11 @@
-import S from "./style/resumo.module.scss";
-import { useFormContext } from "../../hooks/useFormContext"; // Importa o contexto
+import "animate.css"; // Importa animações
+import { useEffect, useRef, useState } from "react";
 import { ProgressBar, ThreeDots } from "react-loader-spinner";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Store } from "react-notifications-component"; // Importa a biblioteca de notificações
 import "react-notifications-component/dist/theme.css"; // Importa os estilos das notificações
-import "animate.css"; // Importa animações
+import { useNavigate } from "react-router-dom";
+import { useFormContext } from "../../hooks/useFormContext"; // Importa o contexto
+import S from "./style/resumo.module.scss";
 
 import IconImgColorida from "../../assets/icons-erro/error-colorida.png";
 import IconImgLupaErro from "../../assets/icons-erro/error-img-lupa.png";
@@ -24,6 +24,8 @@ export const Resumo = () => {
       window.scrollTo(0, 0);
     }, 1000);
   }, []);
+
+  const tagParagrafo = useRef(null);
 
   const showNotification = () => {
     const isMobile = window.innerWidth <= 768;
@@ -70,6 +72,11 @@ export const Resumo = () => {
     }, 1000);
   };
 
+  function mostrarText() {
+    tagParagrafo.current.innerHTML = `Imagem não encontrada`;
+    tagParagrafo.current.style.color = "black";
+  }
+
   return (
     <>
       {loading ? (
@@ -100,19 +107,23 @@ export const Resumo = () => {
             <div className={S.infoItem + " " + S.infoItemImg}>
               <strong>Imagem:</strong>
               {formData.imagem ? (
-                <div className={S.infoImagemNaoEncontrada}>
+                <div className={S.infoImagem}>
                   <img
                     className={S.infoImg}
                     src={formData.imagem}
                     alt={`Imagem do Livro ${formData.titulo}`}
                     onError={(e) => {
-                      let imgClasse = S.infoImgErro;
                       e.target.src = IconImgLupaErro;
-                      e.target.classList.replace(S.infoImg, imgClasse); // Substitui a classe
+                      e.target.classList.replace(S.infoImg, S.infoImgErro); // Substitui a classe
+                      mostrarText();
                     }}
                     loading="lazy"
                   />
-                  <p>Imagem não encontrada</p>
+
+                  <p
+                    className={S.infoImagemnaoEncontrada}
+                    ref={tagParagrafo}
+                  ></p>
                 </div>
               ) : (
                 <div className={S.infoImagemInvalida}>

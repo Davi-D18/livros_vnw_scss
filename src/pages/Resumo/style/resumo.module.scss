@@ -113,16 +113,23 @@
 }
 
 // Estilo das imagens de erro
-.infoImagemnaoEncontrada,
+.infoImagem,
 .infoImagemInvalida {
   display: flex;
   align-items: center;
   flex-direction: column;
 
-  p {
-    color: $black;
-    font-weight: 600;
+  img {
+    width: 100px;
   }
+
+  p {
+    font-weight: 500;
+  }
+}
+
+.infoImagem {
+  color: $black;
 }
 
 .textImagemInvalida {
@@ -134,6 +141,10 @@
   width: 90px;
   height: 90px;
   border-radius: 8px;
+}
+
+.infoImgErro {
+  width: 105px;
 }
 
 // Responsividade

@@ -23,7 +23,7 @@ export const LivrosDoados = () => {
   // renderiza os livros um por um
   useEffect(() => {
     if (renderizarConteudo && indiceAtual < Livros.length) {
-      const atraso = window.innerWidth < 768 ? 500 : 400;
+      const atraso = window.innerWidth < 768 ? 500 : 365;
       const timeout = setTimeout(() => {
         setLivrosRenderizados((prevLivros) => [
           ...prevLivros,

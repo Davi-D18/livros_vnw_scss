@@ -10,11 +10,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out;
-  animation: entrada 0.6s ease-in-out forwards;
+  transition: translate 0.3s ease-in-out, box-shadow 0.2s ease-in-out, scale 0.3s ease-in-out;
+  animation: tilt-in-fwd-bl .6s cubic-bezier(.25,.46,.45,.94) both;
   
   &:hover {
-    transform: translateY(-5px) scale(1.02);
+    translate: 0 -6px;
+    scale: 1.03;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
   }
   
@@ -57,14 +58,14 @@
   font-weight: 600;
 }
 
-@keyframes entrada {
-  from {
+@keyframes tilt-in-fwd-bl {
+  0% {
+    transform: rotateY(-20deg) rotateX(-35deg) translate(-300px, 300px) skew(-35deg, 10deg);
     opacity: 0;
-    transform: translateX(-100%) rotate(-33deg) scale(0.8);
   }
 
-  to {
+  100% {
+    transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
     opacity: 1;
-    transform: translateX(0) rotate(0deg) scale(1);
   }
 }

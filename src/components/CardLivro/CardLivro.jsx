@@ -11,7 +11,7 @@ export function CardLivro(props) {
         loading="lazy" // Carrega a imagem quando estiver prestes a ser exibida
       />
       <ul className={S.listaInfo}>
-        <li className={S.descricao}>{props.descricao}</li>
+        <li className={S.descricao}>{props.titulo}</li>
         <li>
           Páginas: <span className={S.paginas}>{props.paginas}</span>
         </li>
@@ -25,7 +25,7 @@ export function CardLivro(props) {
 
 CardLivro.propTypes = {
   imagem: PropTypes.string.isRequired,
-  descricao: PropTypes.string.isRequired,
+  titulo: PropTypes.string.isRequired,
   categoria: PropTypes.string.isRequired,
   paginas: PropTypes.number.isRequired,
 };

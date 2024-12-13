@@ -1,13 +1,8 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-  // server: {
-  //   open: true,
-  //   host: "192.168.1.15", // Permite que outros dispositivos acessem
-  //   port: 5173,
-  // },
   css: {
     preprocessorOptions: {
       scss: {

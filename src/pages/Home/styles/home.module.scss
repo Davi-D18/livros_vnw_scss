@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 89vh;
+  height: calc(100vh - 65px);
 
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@
   .sectionContainer {
     background-image: url("../../../assets/images/secao1_entregando-livros-mobile.png");
     justify-content: center;
-    height: 750px;
+    height: calc(100vh - 105px);
   }
 
   .title {

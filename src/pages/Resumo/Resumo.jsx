@@ -10,18 +10,27 @@ import S from "./style/resumo.module.scss";
 import IconImgColorida from "../../assets/icons-erro/error-colorida.png";
 import IconImgLupaErro from "../../assets/icons-erro/error-img-lupa.png";
 
+const isValidUrl = (url) => {
+  try {
+    new URL(url); // Verifica se a string é um URL válido
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 export const Resumo = () => {
   const navigate = useNavigate();
-  const { formData } = useFormContext(); // Obtém os dados do formulário
-  const [loading, setLoading] = useState(true); // Estado para controlar o carregamento
-  const [loadingButton, setLoadingButton] = useState(false); // Estado para controlar o carregamento do botão
+  const { formData } = useFormContext();
+  const [loading, setLoading] = useState(true);
+  const [loadingButton, setLoadingButton] = useState(false);
 
   const tagParagrafo = useRef(null);
   const colorButton = useRef();
+
   useEffect(() => {
-    // Simula o carregamento da página
     setTimeout(() => {
-      setLoading(false); // Após 1 segundo, esconde o loader e mostra o conteúdo
+      setLoading(false);
       window.scrollTo(0, 0);
     }, 1000);
   }, []);
@@ -44,10 +53,10 @@ export const Resumo = () => {
         isMobile ? "animate__fadeOutDown" : "animate__fadeOut",
       ],
       dismiss: {
-        duration: isMobile ? 2700 : 3900, // Menor duração para dispositivos móveis
+        duration: isMobile ? 2700 : 3900,
         onScreen: true,
         showIcon: true,
-        onDismiss: handleBack(), // Redireciona após o fechamento
+        onDismiss: handleBack(),
       },
       width: isMobile ? 300 : 400,
     });
@@ -55,8 +64,8 @@ export const Resumo = () => {
 
   function handleBack() {
     setTimeout(() => {
-      navigate("/"); // Redireciona para a página inicial
-      window.scrollTo(0, 0); // Scroll para o topo
+      navigate("/");
+      window.scrollTo(0, 0);
     }, 300);
   }
 
@@ -66,15 +75,45 @@ export const Resumo = () => {
 
     setTimeout(() => {
       setLoadingButton(false);
-      colorButton.current.style.backgroundColor = "#005695"; // Reseta a cor do botão
-      showNotification(); // Exibe a notificação
+      colorButton.current.style.backgroundColor = "#005695";
+      showNotification();
     }, 1000);
   }
 
-  function mostrarText() {
-    tagParagrafo.current.innerHTML = `Imagem não encontrada`;
-    tagParagrafo.current.style.color = "black";
-  }
+  const renderImage = () => {
+    const { imagem } = formData;
+
+    if (!isValidUrl(imagem)) {
+      return (
+        <div className={S.infoImagemInvalida}>
+          <img
+            className={S.infoImg}
+            src={IconImgColorida}
+            alt="Imagem de erro"
+          />
+          <p className={S.textImagemInvalida}>Link da imagem inválido</p>
+        </div>
+      );
+    }
+
+    return (
+      <div className={S.infoImagem}>
+        <img
+          className={S.infoImg}
+          src={imagem}
+          alt={`Imagem do Livro ${formData.titulo}`}
+          onError={(e) => {
+            e.target.src = IconImgLupaErro;
+            e.target.classList.replace(S.infoImg, S.infoImgErro);
+            e.target.alt = "Imagem não encontrada";
+            tagParagrafo.current.textContent = "Imagem não encontrada";
+          }}
+          loading="lazy"
+        />
+        <p className={S.textImagemNaoEncontrada} ref={tagParagrafo}></p>
+      </div>
+    );
+  };
 
   return (
     <>
@@ -105,38 +144,7 @@ export const Resumo = () => {
 
             <div className={S.infoItem + " " + S.infoItemImg}>
               <strong>Imagem:</strong>
-              {formData.imagem ? (
-                <div className={S.infoImagem}>
-                  <img
-                    className={S.infoImg}
-                    src={formData.imagem}
-                    alt={`Imagem do Livro ${formData.titulo}`}
-                    onError={(e) => {
-                      e.target.src = IconImgLupaErro;
-                      e.target.classList.replace(S.infoImg, S.infoImgErro); // Substitui a classe
-                      mostrarText();
-                    }}
-                    loading="lazy"
-                  />
-
-                  <p
-                    className={S.infoImagemnaoEncontrada}
-                    ref={tagParagrafo}
-                  ></p>
-                </div>
-              ) : (
-                <div className={S.infoImagemInvalida}>
-                  <img
-                    className={S.infoImg}
-                    src={IconImgColorida}
-                    loading="lazy"
-                    alt="Imagem de erro"
-                  />
-                  <p className={S.textImagemInvalida}>
-                    Link da Imagem Inválido
-                  </p>
-                </div>
-              )}
+              {renderImage()}
             </div>
 
             <div className={S.infoItem}>
@@ -150,8 +158,8 @@ export const Resumo = () => {
               onClick={handleConfirm}
               className={S.button}
               ref={colorButton}
-              disabled={loadingButton} // Desabilita o botão enquanto estiver carregando
-              aria-label="Confirmar doação" // Aria-label para acessibilidade
+              disabled={loadingButton}
+              aria-label="Confirmar doação"
             >
               {loadingButton ? (
                 <ThreeDots

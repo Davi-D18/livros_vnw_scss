@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Hourglass } from "react-loader-spinner";
+// import { Hourglass } from "react-loader-spinner";
 import { CardLivro } from "../../components/CardLivro/CardLivro.jsx";
 import { Livros } from "../../data/info-livros.js";
 
+import { LoadingAnimation } from "../../components/LoadingAnimation/LoadingAnimation.jsx";
 import S from "./styles/livrosDoados.module.scss";
 
 export const LivrosDoados = () => {
@@ -12,7 +13,7 @@ export const LivrosDoados = () => {
 
   // Função para simular o carregamento da página
   useEffect(() => {
-    const delayInicial = 1500; // Tempo inicial de carregamento
+    const delayInicial = 1700; // Tempo inicial de carregamento
     const timeout = setTimeout(() => {
       setRenderizarConteudo(true);
     }, delayInicial);
@@ -58,7 +59,7 @@ export const LivrosDoados = () => {
         </section>
       ) : (
         <div className={S.containerLoader}>
-          <Hourglass />
+          <LoadingAnimation />
           <p>Buscando Livros...</p>
         </div>
       )}

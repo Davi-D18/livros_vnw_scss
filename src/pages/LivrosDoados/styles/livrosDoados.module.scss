@@ -26,11 +26,7 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 100px);
-
-  p {
-    color: $black;
-  }
+  height: calc(100vh - 160px);
 }
 
 @media (max-width: $breakpoint-tablet) {

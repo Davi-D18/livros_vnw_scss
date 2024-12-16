@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { App } from "./App.jsx";
+import { LoadingAnimation } from "./components/LoadingAnimation/LoadingAnimation.jsx";
 import { FormProvider } from "./context/FormProvider.jsx";
 import { Error404 } from "./pages/Error/Error404.jsx";
 import { FormDoacao } from "./pages/FormDoacao/FormDoacao.jsx";
@@ -32,6 +33,10 @@ const router = createBrowserRouter(
         {
           path: "/resumo",
           element: <Resumo />,
+        },
+        {
+          path: "/teste",
+          element: <LoadingAnimation />,
         },
       ],
     },

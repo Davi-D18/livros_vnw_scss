@@ -1,5 +1,5 @@
 .secaoFormDoarLivro {
-  height: 80dvh;
+  margin-bottom: 10vh;
 }
 
 .aviso {
@@ -76,7 +76,7 @@
 
 @media (max-width: $breakpoint-tablet) {
   .secaoFormDoarLivro {
-    margin-bottom: 13vh;
+    margin-bottom: 10vh;
   }
   
   .aviso {
@@ -100,6 +100,6 @@
  }
 
  .input {
-    width: 78%;
+    width: 85%;
  }
 }
